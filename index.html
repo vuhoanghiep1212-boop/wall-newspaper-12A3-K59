@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Báo Tường 20/11 - 12A3</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>Báo Tường 20/11</h1>
+<h2>Chi Đoàn 12A3</h2>
+</header>
+
+
+<nav>
+
+<button onclick="scrollToSection('classroom')">
+Bài Viết
+</button>
+
+<button onclick="scrollToSection('memory')">
+Kỷ Niệm
+</button>
+
+<button onclick="scrollToSection('gallery')">
+Ảnh Lớp
+</button>
+
+<button onclick="scrollToSection('wish')">
+Lời Chúc
+</button>
+
+</nav>
+
+
+<!-- BÀI VIẾT -->
+
+<section id="classroom">
+
+<h2>📚 Góc Bài Viết</h2>
+
+<div class="classroom">
+
+<div class="desk" onclick="openPopup('loingo')">
+📜 Lời Ngỏ
+</div>
+
+<div class="desk" onclick="openPopup('truyen')">
+📖 Truyện Ngắn
+</div>
+
+<div class="desk" onclick="openPopup('tho')">
+✍ Thơ
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- KỶ NIỆM -->
+
+<section id="memory">
+
+<h2>⛵ Con Thuyền Kỷ Niệm</h2>
+
+<div class="boat-area">
+
+<div class="boat" onclick="openPopup('mem1')">
+⛵ Kỷ Niệm 1
+</div>
+
+<div class="boat" onclick="openPopup('mem2')">
+⛵ Kỷ Niệm 2
+</div>
+
+<div class="boat" onclick="openPopup('mem3')">
+⛵ Kỷ Niệm 3
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- GALLERY -->
+
+<div class="gallery">
+
+<div class="photo">
+<img src="images/20-11-2025.jpg" onclick="openImage(this.src)">
+<p>Đại diện lớp đến chúc mừng thầy nhân ngày 20/11</p>
+</div>
+
+<div class="photo">
+<img src="images/Chè ngon.jpg" onclick="openImage(this.src)">
+<p>Cả lớp tụ họp vui vẻ tại nhà thầy</p>
+</div>
+
+<div class="photo">
+<img src="images/Chất chưa.jpg" onclick="openImage(this.src)">
+<p>Sinh nhật thầy – khoảnh khắc đáng nhớ của lớp</p>
+</div>
+
+<div class="photo">
+<img src="images/Hi chào cậu.jpg" onclick="openImage(this.src)">
+<p>Tấm ảnh vui nhộn của thầy và lớp</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- LỜI CHÚC -->
+
+<section class="loi-chuc">
+
+<h2>LỜI CHÚC</h2>
+
+<div class="wish-form">
+
+<input type="text" id="name" placeholder="Nhập tên của bạn">
+
+<textarea id="message" placeholder="Nhập lời chúc..."></textarea>
+
+<button onclick="addWish()">Gửi lời chúc</button>
+
+</div>
+
+<div id="wish-list" class="wish-box">
+<!-- lời chúc sẽ xuất hiện ở đây -->
+</div>
+
+</section>
+
+<!-- POPUP BÀI VIẾT -->
+
+<div class="popup" id="popup">
+
+<div class="popup-content">
+
+<span class="close" onclick="closePopup()">✖</span>
+
+<div id="popupText"></div>
+
+</div>
+
+</div>
+
+<!-- POPUP ẢNH -->
+
+<div class="image-popup" id="imagePopup" onclick="closeImage()">
+<img id="popupImg">
+</div>
+
+
+<script src="script.js"></script>
+
+
+<footer class="contact-footer">
+
+<div class="contact-box">
+
+<p>© 2026 Trần Thị Linh / Vũ Hoàng Hiệp(Đại diện nhóm 1) – Lớp 12A3</p>
+
+<p>Email: linh1321082008@gmail.com / vuhoanghiep1212@gmail.com</p>
+
+<p>Ngày cập nhật: 15/03/2026</p>
+
+<p>Trang web có sử dụng hình ảnh từ Internet và fanpage của Trường THPT Bất Bạt</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>
+
