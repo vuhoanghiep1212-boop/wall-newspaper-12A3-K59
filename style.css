@@ -9,9 +9,17 @@ body{
 
 header{
     text-align:center;
-    padding:40px;
+    padding:50px;
     background:#0a3d62;
     color:white;
+    position:relative;
+}
+
+.school-logo{
+    position:absolute;
+    left:20px;
+    top:15px;
+    width:80px;
 }
 
 
