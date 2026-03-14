@@ -197,7 +197,6 @@ document.getElementById("popup").style.display="none";
 }
 
 
-
 function addWish(){
 
 let name = document.getElementById("name").value;
@@ -208,25 +207,67 @@ alert("Vui lòng nhập đầy đủ thông tin");
 return;
 }
 
-let wishHTML = `
-<div class="wish">
-<p>${message}</p>
-<span class="sender">— ${name}</span>
-</div>
-`;
+let wish = {
+name: name,
+message: message
+};
 
-document.getElementById("wish-list").innerHTML += wishHTML;
+// lấy danh sách lời chúc cũ
+let wishes = JSON.parse(localStorage.getItem("wishes")) || [];
+
+// thêm lời chúc mới
+wishes.push(wish);
+
+// lưu lại
+localStorage.setItem("wishes", JSON.stringify(wishes));
+
+// hiển thị lại
+displayWishes();
 
 document.getElementById("name").value = "";
 document.getElementById("message").value = "";
 
 }
 
-function openImage(src){
-document.getElementById("popupImg").src = src;
-document.getElementById("imagePopup").style.display = "flex";
+
+function displayWishes(){
+
+let wishList = document.getElementById("wish-list");
+wishList.innerHTML = "";
+
+let wishes = JSON.parse(localStorage.getItem("wishes")) || [];
+
+wishes.forEach((wish,index) => {
+
+let wishHTML = `
+<div class="wish">
+<p>${wish.message}</p>
+<span class="sender">— ${wish.name}</span>
+<button class="delete-btn" onclick="deleteWish(${index})">Xoá</button>
+</div>
+`;
+
+wishList.innerHTML += wishHTML;
+
+});
+
 }
 
-function closeImage(){
-document.getElementById("imagePopup").style.display = "none";
+
+function deleteWish(index){
+
+let wishes = JSON.parse(localStorage.getItem("wishes")) || [];
+
+wishes.splice(index,1);
+
+localStorage.setItem("wishes", JSON.stringify(wishes));
+
+displayWishes();
+
 }
+
+
+// khi tải trang
+window.onload = function(){
+displayWishes();
+};
