@@ -271,3 +271,20 @@ displayWishes();
 window.onload = function(){
 displayWishes();
 };
+
+function openImage(src){
+
+let popup = document.getElementById("imagePopup");
+let img = document.getElementById("popupImg");
+
+img.src = src;
+
+popup.style.display = "flex";
+
+}
+
+function closeImage(){
+
+document.getElementById("imagePopup").style.display = "none";
+
+}
